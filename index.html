@@ -10,9 +10,8 @@
             background-color: #f4f4f9; /* Cette couleur de fond sera écrasée par l'image de fond */
             font-family: Arial, sans-serif;
             font-size: 16px;
-            margin: 0 auto;
-            max-width: 800px;
-            padding: 20px;
+            margin: 0; /* Enlève le margin par défaut */
+            padding: 0; /* Enlève le padding par défaut */
             background-image: url('image/Dev.jpg'); /* Ajout de l'image de fond ici */
             background-size: cover; /* Pour couvrir tout l'écran */
             background-position: center; /* Pour centrer l'image */
@@ -26,6 +25,9 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px; /* Marge autour du conteneur pour qu'il ne touche pas le bord de l'écran */
+            max-width: 800px; /* Limite la largeur du conteneur */
+            float: right; /* Aligne le conteneur à droite */
         }
         .header {
             background-color: rgb(26, 82, 112);
@@ -252,7 +254,18 @@
             }
         });
 
-        // Masquer le
+        // Masquer le menu lorsque l'utilisateur clique en dehors de celui-ci
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.menu-btn')) {
+                if (dropdownMenu.style.display === 'block') {
+                    dropdownMenu.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
 
 
 
