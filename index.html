@@ -14,7 +14,10 @@
             padding: 0; /* Enlève le padding par défaut */
             background-image: url('image/Dev.jpg'); /* Ajout de l'image de fond ici */
             background-size: cover; /* Pour couvrir tout l'écran */
-            background-position: center; /* Pour centrer l'image */
+            background-position: left; /* Pour aligner l'image à gauche */
+            display: flex; /* Utilisation de flexbox pour aligner les éléments */
+            justify-content: flex-end; /* Aligne le conteneur à droite */
+            min-height: 100vh; /* Assure que le corps prend toute la hauteur de la fenêtre */
         }
         h1, h2, h3 {
             text-align: center;
@@ -27,7 +30,6 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 20px; /* Marge autour du conteneur pour qu'il ne touche pas le bord de l'écran */
             max-width: 800px; /* Limite la largeur du conteneur */
-            float: right; /* Aligne le conteneur à droite */
         }
         .header {
             background-color: rgb(26, 82, 112);
@@ -45,6 +47,7 @@
         .menu-container {
             position: relative;
             display: inline-block;
+            margin-left: auto; /* Pour que le bouton de menu soit aligné à droite */
         }
         .menu-btn {
             background-color: #1a5270;
@@ -106,7 +109,7 @@
                 <h1>DEMBA DIOP</h1>
                 <p>STAGE EN DEVOPS CLOUD</p>
             </div>
-            <div class="menu-container" style="margin-left:auto;">
+            <div class="menu-container">
                 <button class="menu-btn">Menu</button>
                 <div class="dropdown-menu">
                     <a href="#parcours">Mon Parcours</a>
@@ -265,6 +268,7 @@
     </script>
 </body>
 </html>
+
 
 
 
