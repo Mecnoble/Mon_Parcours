@@ -24,6 +24,52 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        .header {
+            background-color: rgb(26, 82, 112);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        .header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        .menu-container {
+            position: relative;
+            display: inline-block;
+        }
+        .menu-btn {
+            background-color: #1a5270;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+        .dropdown-menu a {
+            text-decoration: none;
+            color: black;
+            padding: 8px 12px;
+            display: block;
+        }
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+        }
+        .contact, .skills, .experience, .education, .projects, .interests {
+            margin-bottom: 20px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -37,19 +83,10 @@
             background-color: #f4f4f9;
             color: black;
         }
-        .header {
-            background-color: rgb(26, 82, 112);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-        }
         .section-title {
             background-color: #ddd;
             padding: 5px;
             font-size: 18px;
-        }
-        .contact, .skills, .experience, .education, .projects, .interests {
-            margin-bottom: 20px;
         }
         .bold {
             font-weight: bold;
@@ -58,12 +95,23 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
+    <div class="header">
+        <img src="me.jpeg" alt="Photo de Demba Diop">
+        <div>
             <h1>DEMBA DIOP</h1>
             <p>STAGE EN DEVOPS CLOUD</p>
         </div>
+        <div class="menu-container" style="margin-left:auto;">
+            <button class="menu-btn">Menu</button>
+            <div class="dropdown-menu">
+                <a href="#parcours">Mon Parcours</a>
+                <a href="#projet">Mon Projet Professionnel</a>
+                <a href="#ambitions">Mes Ambitions</a>
+            </div>
+        </div>
+    </div>
 
-        <div class="contact">
+    <div class="contact">
             <h2>Coordonnées</h2>
             <table>
                 <tr>
@@ -85,50 +133,16 @@
             </table>
         </div>
 
-        <div class="profile">
-            <h2>Profil Personnel</h2>
-            <p>
-                Passionné par l'informatique et spécialisé en réseaux informatiques, je suis actuellement à la recherche d’un stage de fin d’études 
-                conventionné d’une durée de 6 mois, disponible immédiatement. Je souhaite mettre en pratique les compétences que j’ai acquises au cours 
-                de ma formation, tout en continuant à enrichir mes connaissances.
-            </p>
-        </div>
+    <div class="profile">
+        <h2 id="projet">Profil Personnel</h2>
+        <p>
+            Passionné par l'informatique et spécialisé en réseaux informatiques, je suis actuellement à la recherche d’un stage de fin d’études 
+            conventionné d’une durée de 6 mois, disponible immédiatement. Je souhaite mettre en pratique les compétences que j’ai acquises au cours 
+            de ma formation, tout en continuant à enrichir mes connaissances.
+        </p>
+    </div>
 
-        <div class="skills">
-            <h2>Compétences</h2>
-            <table>
-                <tr>
-                    <th>Catégorie</th>
-                    <th>Détails</th>
-                </tr>
-                <tr>
-                    <td>Systèmes, Sécurité, Réseaux</td>
-                    <td>Serveurs DHCP, DNS, HTTP, LAN-WAN, VPN, VoIP, TCP/IP, IPv6, WIFI, LTE, 5G, TLS/SSL, Firewalls, IPSec, etc.</td>
-                </tr>
-                <tr>
-                    <td>Environnement de travail</td>
-                    <td>VMware, Hyper-V, AWS, Docker, CI/CD, GitHub, GitLab, Jira, Slack, etc.</td>
-                </tr>
-                <tr>
-                    <td>Langages de programmation</td>
-                    <td>Shell, Bash, MySQL, JavaObjet, Python, Angular, VueJS, HTML, CSS, JavaScript</td>
-                </tr>
-                <tr>
-                    <td>Automatisation et Supervision</td>
-                    <td>Grafana, Nagios, Wireshark, Ansible, Terraform, Kubernetes, Play-with-Docker</td>
-                </tr>
-                <tr>
-                    <td>SGBD</td>
-                    <td>PostgreSQL, MySQL, Maven, Tomcat</td>
-                </tr>
-                <tr>
-                    <td>Systèmes OS</td>
-                    <td>Linux Debian, Windows Serveur, Red Hat, Kali, Cloud Azure, AWS (IAM, EC2, S3, VPC)</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="education">
+       <div class="education">
             <h2>Formations</h2>
             <table>
                 <tr>
@@ -218,6 +232,34 @@
                 <li>Gestion de projet</li>
             </ul>
         </div>
-    </div>
+
+    <!-- Script pour gérer le menu -->
+    <script>
+        // Sélectionne les éléments du DOM
+        const menuBtn = document.querySelector('.menu-btn');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        // Gère l'affichage du menu lors du clic sur le bouton
+        menuBtn.addEventListener('click', function() {
+            if (dropdownMenu.style.display === 'block') {
+                dropdownMenu.style.display = 'none';
+            } else {
+                dropdownMenu.style.display = 'block';
+            }
+        });
+
+        // Masquer le menu si on clique en dehors de celui-ci
+        window.onclick = function(event) {
+            if (!event.target.matches('.menu-btn')) {
+                if (dropdownMenu.style.display === 'block') {
+                    dropdownMenu.style.display = 'none';
+                }
+            }
+        };
+    </script>
 </body>
 </html>
+
+
+
+
