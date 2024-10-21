@@ -7,12 +7,15 @@
     <title>CV Demba Diop</title>
     <style>
         body {
-            background-color: #f4f4f9;
+            background-color: #f4f4f9; /* Cette couleur de fond sera écrasée par l'image de fond */
             font-family: Arial, sans-serif;
             font-size: 16px;
             margin: 0 auto;
             max-width: 800px;
             padding: 20px;
+            background-image: url('image/Dev.jpg'); /* Ajout de l'image de fond ici */
+            background-size: cover; /* Pour couvrir tout l'écran */
+            background-position: center; /* Pour centrer l'image */
         }
         h1, h2, h3 {
             text-align: center;
@@ -88,11 +91,6 @@
             padding: 5px;
             font-size: 18px;
         }
-        body {
-    background-image: url('image/Dev.jpg');
-    background-size: cover; /* Pour couvrir tout l'écran */
-    background-position: center; /* Pour centrer l'image */
-}
         .bold {
             font-weight: bold;
         }
@@ -100,23 +98,23 @@
 </head>
 <body>
     <div class="container">
-    <div class="header">
-        <img src="image/me.jpeg" alt="Photo de Demba Diop">
-        <div>
-            <h1>DEMBA DIOP</h1>
-            <p>STAGE EN DEVOPS CLOUD</p>
-        </div>
-        <div class="menu-container" style="margin-left:auto;">
-            <button class="menu-btn">Menu</button>
-            <div class="dropdown-menu">
-                <a href="#parcours">Mon Parcours</a>
-                <a href="#projet">Mon Projet Professionnel</a>
-                <a href="#ambitions">Mes Ambitions</a>
+        <div class="header">
+            <img src="image/me.jpeg" alt="Photo de Demba Diop">
+            <div>
+                <h1>DEMBA DIOP</h1>
+                <p>STAGE EN DEVOPS CLOUD</p>
+            </div>
+            <div class="menu-container" style="margin-left:auto;">
+                <button class="menu-btn">Menu</button>
+                <div class="dropdown-menu">
+                    <a href="#parcours">Mon Parcours</a>
+                    <a href="#projet">Mon Projet Professionnel</a>
+                    <a href="#ambitions">Mes Ambitions</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="contact">
+        <div class="contact">
             <h2>Coordonnées</h2>
             <table>
                 <tr>
@@ -138,16 +136,16 @@
             </table>
         </div>
 
-    <div class="profile">
-        <h2 id="projet">Profil Personnel</h2>
-        <p>
-            Passionné par l'informatique et spécialisé en réseaux informatiques, je suis actuellement à la recherche d’un stage de fin d’études 
-            conventionné d’une durée de 6 mois, disponible immédiatement. Je souhaite mettre en pratique les compétences que j’ai acquises au cours 
-            de ma formation, tout en continuant à enrichir mes connaissances.
-        </p>
-    </div>
+        <div class="profile">
+            <h2 id="projet">Profil Personnel</h2>
+            <p>
+                Passionné par l'informatique et spécialisé en réseaux informatiques, je suis actuellement à la recherche d’un stage de fin d’études 
+                conventionné d’une durée de 6 mois, disponible immédiatement. Je souhaite mettre en pratique les compétences que j’ai acquises au cours 
+                de ma formation, tout en continuant à enrichir mes connaissances.
+            </p>
+        </div>
 
-       <div class="education">
+        <div class="education">
             <h2>Formations</h2>
             <table>
                 <tr>
@@ -237,6 +235,7 @@
                 <li>Gestion de projet</li>
             </ul>
         </div>
+    </div>
 
     <!-- Script pour gérer le menu -->
     <script>
@@ -253,17 +252,7 @@
             }
         });
 
-        // Masquer le menu si on clique en dehors de celui-ci
-        window.onclick = function(event) {
-            if (!event.target.matches('.menu-btn')) {
-                if (dropdownMenu.style.display === 'block') {
-                    dropdownMenu.style.display = 'none';
-                }
-            }
-        };
-    </script>
-</body>
-</html>
+        // Masquer le
 
 
 
